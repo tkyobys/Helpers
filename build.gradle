@@ -1,0 +1,37 @@
+// Use Maven Repository
+repositories {
+    mavenCentral()
+}
+
+// Use Java
+apply plugin: 'java'
+// Create project for eclipse
+apply plugin: 'eclipse'
+
+// Java compile Version
+sourceCompatibility = 1.8
+
+// Version of project
+version = '1.0'
+
+// Set Eclipse environment
+eclipse {
+    classpath {
+        downloadSources = true
+        downloadJavadoc = true
+
+    }
+    jdt {
+        file {
+            def props = new Properties()
+            props.load(new FileInputStream('eclipse-settings-template/org.eclipse.jdt.core.prefs'))
+            withProperties { properties -> properties.putAll(props) }
+        }
+    }
+}
+
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+}
