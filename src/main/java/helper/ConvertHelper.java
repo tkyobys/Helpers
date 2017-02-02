@@ -8,6 +8,12 @@ import java.time.format.DateTimeFormatter;
  */
 public class ConvertHelper {
 
+	/**
+	 * 外部からのインスタンスの生成を禁止する.
+	 */
+	private ConvertHelper() {
+	}
+
 	/** 日付文字列のパターン yyyyMMdd 例:20170130 */
 	public static final String PATTERN_YYYYMMDD = "yyyyMMdd";
 	/** 日付文字列のパターン yyyyMMdd HH:mm:SS 例:20170130 01:05:09*/
