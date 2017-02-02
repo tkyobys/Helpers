@@ -14,6 +14,8 @@ public class ConvertHelper {
 	private ConvertHelper() {
 	}
 
+	/** 空白文字 */
+	public static final String EMPTY = "";
 	/** 日付文字列のパターン yyyyMMdd 例:20170130 */
 	public static final String PATTERN_YYYYMMDD = "yyyyMMdd";
 	/** 日付文字列のパターン yyyyMMdd HH:mm:SS 例:20170130 01:05:09*/
@@ -28,4 +30,14 @@ public class ConvertHelper {
 	public static LocalDate toDate(String text, String pattern) {
 		return LocalDate.parse(text, DateTimeFormatter.ofPattern(pattern));
 	}
+
+	/**
+	 * 引数で与えられた文字列がnullの場合は空白文字列に変換して返却する。
+	 * @param value 文字列
+	 * @return 文字列
+	 */
+	public static String toEmptyIfNull(String value) {
+		return ValidateHelper.isNull(value) ? EMPTY : value;
+	}
+
 }

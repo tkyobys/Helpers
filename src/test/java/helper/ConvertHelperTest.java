@@ -49,4 +49,24 @@ public class ConvertHelperTest {
 		String text = "20170131 12:0:00";
 		ConvertHelper.toDate(text, ConvertHelper.PATTERN_YYYYMMDD);
 	}
+
+	@Test
+	public void toEmptyIfNull_null() {
+		String actual = ConvertHelper.toEmptyIfNull(null);
+		assertThat(actual, is(ConvertHelper.EMPTY));
+	}
+
+	@Test
+	public void toEmptyIfNull_空文字() {
+		String actual = ConvertHelper.toEmptyIfNull(ConvertHelper.EMPTY);
+		assertThat(actual, is(ConvertHelper.EMPTY));
+	}
+
+	@Test
+	public void toEmptyIfNull_値あり() {
+		String s = "a";
+		String actual = ConvertHelper.toEmptyIfNull(s);
+		assertThat(actual, is(s));
+	}
+
 }
