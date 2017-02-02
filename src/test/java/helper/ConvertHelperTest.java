@@ -9,7 +9,7 @@ import java.time.format.DateTimeParseException;
 import org.junit.Test;
 
 /**
- * {@link ConvertHelper}クラスのテストクラス.
+ * {@link ConvertHelper}のテストクラス.
  */
 public class ConvertHelperTest {
 	@Test
