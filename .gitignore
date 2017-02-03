@@ -1,5 +1,6 @@
 /bin
 /build
+/output-test
 
 *.class
 
