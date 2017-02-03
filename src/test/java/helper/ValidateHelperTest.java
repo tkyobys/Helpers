@@ -12,51 +12,93 @@ import org.junit.Test;
  */
 public class ValidateHelperTest {
 
-	@Test
-	public void isNull_null() {
-		assertTrue(ValidateHelper.isNull(null));
-	}
+    @Test
+    public void isNull_null() {
+        assertTrue(ValidateHelper.isNull(null));
+    }
 
-	@Test
-	public void isNull_nullではない() {
-		String obj = "";
-		assertFalse(ValidateHelper.isNull(obj));
-	}
+    @Test
+    public void isNull_nullではない() {
+        String obj = "";
+        assertFalse(ValidateHelper.isNull(obj));
+    }
 
-	@Test
-	public void isEmpty_文字列_null() {
-		String s = null;
-		assertTrue(ValidateHelper.isEmpty(s));
-	}
+    @Test
+    public void isEmpty_文字列_null() {
+        String s = null;
+        assertTrue(ValidateHelper.isEmpty(s));
+    }
 
-	@Test
-	public void isEmpty_文字列_空文字() {
-		String s = "";
-		assertTrue(ValidateHelper.isEmpty(s));
-	}
+    @Test
+    public void isEmpty_文字列_空文字() {
+        String s = "";
+        assertTrue(ValidateHelper.isEmpty(s));
+    }
 
-	@Test
-	public void isEmpty_文字列_値あり() {
-		String s = "a";
-		assertFalse(ValidateHelper.isEmpty(s));
-	}
+    @Test
+    public void isEmpty_文字列_値あり() {
+        String s = "a";
+        assertFalse(ValidateHelper.isEmpty(s));
+    }
 
-	@Test
-	public void isEmpty_コレクション_null() {
-		List<String> c = null;
-		assertTrue(ValidateHelper.isEmpty(c));
-	}
+    @Test
+    public void isEmpty_コレクション_null() {
+        List<String> c = null;
+        assertTrue(ValidateHelper.isEmpty(c));
+    }
 
-	@Test
-	public void isEmpty_コレクション_空() {
-		List<String> c = new ArrayList<>();
-		assertTrue(ValidateHelper.isEmpty(c));
-	}
+    @Test
+    public void isEmpty_コレクション_空() {
+        List<String> c = new ArrayList<>();
+        assertTrue(ValidateHelper.isEmpty(c));
+    }
 
-	@Test
-	public void isEmpty_コレクション_要素あり() {
-		List<String> c = new ArrayList<>();
-		c.add("");
-		assertFalse(ValidateHelper.isEmpty(c));
-	}
+    @Test
+    public void isEmpty_コレクション_要素あり() {
+        List<String> c = new ArrayList<>();
+        c.add("");
+        assertFalse(ValidateHelper.isEmpty(c));
+    }
+
+    @Test
+    public void isMatch_一致する() {
+        String value = "0";
+        assertTrue(ValidateHelper.isMatch(value, ValidateHelper.PATTERN_NUMBER));
+    }
+
+    @Test
+    public void isMatch_一致しない() {
+        String value = "あ";
+        assertFalse(ValidateHelper.isMatch(value, ValidateHelper.PATTERN_NUMBER));
+    }
+
+    @Test
+    public void isMatch_文字列がnullである() {
+        assertFalse(ValidateHelper.isMatch(null, ValidateHelper.PATTERN_NUMBER));
+    }
+
+    @Test
+    public void isMatch_文字列が空白である() {
+        String value = "";
+        assertFalse(ValidateHelper.isMatch(value, ValidateHelper.PATTERN_NUMBER));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void isMatch_パターンがnullである() {
+        String value = "0";
+        ValidateHelper.isMatch(value, null);
+    }
+
+    @Test
+    public void isMatch_パターンが空白である() {
+        String value = "0";
+        assertFalse(ValidateHelper.isMatch(value, ConvertHelper.EMPTY));
+    }
+
+    @Test
+    public void isMatch_パターンが空白である_文字列が空白である() {
+        String value = "";
+        assertTrue(ValidateHelper.isMatch(value, ConvertHelper.EMPTY));
+    }
+
 }
