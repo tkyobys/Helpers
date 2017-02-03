@@ -32,6 +32,10 @@ eclipse {
 
 
 dependencies {
+    // join pdf files.
+    compile 'org.apache.pdfbox:pdfbox:2.0.4'
+
+    // unit test
     testCompile 'junit:junit:4.12', {
         transitive = false
     }
