@@ -2,6 +2,7 @@ package helper;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 /**
  * 各種変換処理を行うヘルパークラス.
@@ -31,13 +32,13 @@ public class ConvertHelper {
 		return LocalDate.parse(text, DateTimeFormatter.ofPattern(pattern));
 	}
 
+
 	/**
 	 * 引数で与えられた文字列がnullの場合は空白文字列に変換して返却する。
 	 * @param value 文字列
 	 * @return 文字列
 	 */
 	public static String toEmptyIfNull(String value) {
-		return ValidateHelper.isNull(value) ? EMPTY : value;
+		return Objects.toString(value, EMPTY);
 	}
-
 }
