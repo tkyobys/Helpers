@@ -1,6 +1,7 @@
 package helper;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 /**
@@ -26,7 +27,7 @@ public class ValidateHelper {
 	 * @return true:objがnull false:objがnullではない
 	 */
 	public static boolean isNull(Object obj) {
-		return obj == null;
+		return Objects.isNull(obj);
 	}
 
 	/**
