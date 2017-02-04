@@ -7,6 +7,8 @@ import org.zeroturnaround.zip.ZipUtil;
 
 /**
  * zipファイルを取り扱うヘルパークラス.
+ * zipファイルの取り扱いにはzt-zipを利用している。<br>
+ * 参考：https://github.com/zeroturnaround/zt-zip
  */
 public class ZipHelper {
 
