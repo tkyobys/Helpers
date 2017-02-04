@@ -31,20 +31,20 @@ public class ValidateHelper {
 
 	/**
 	 * 引数のStringオブジェクトがnullもしくは空文字か検査する.
-	 * @param s Stringオブジェクト
+	 * @param value Stringオブジェクト
 	 * @return true:nullもしくは空文字 false:値がある
 	 */
-	public static boolean isEmpty(String s) {
-		return isNull(s) || s.isEmpty();
+	public static boolean isEmpty(String value) {
+		return isNull(value) || value.isEmpty();
 	}
 
 	/**
 	 * 引数のコレクションがnullもしくは空か検査する.
-	 * @param c コレクション
+	 * @param collection コレクション
 	 * @return true:nullもしくは空 false:値がある
 	 */
-	public static boolean isEmpty(Collection<?> c) {
-		return isNull(c) || c.isEmpty();
+	public static boolean isEmpty(Collection<?> collection) {
+		return isNull(collection) || collection.isEmpty();
 	}
 
 	/**
