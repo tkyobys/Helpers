@@ -17,19 +17,34 @@ public class ZipHelper {
 	}
 
 	/**
-	 * フォルダをzip圧縮する
-	 * @param dirPath フォルダのパス
+	 * フォルダをzip圧縮する.
+	 * @param dirPath 圧縮するフォルダのパス
 	 * @param zipFilePath zipファイルの出力先
 	 * @throws IOException
 	 */
-	public static void compress(String dirPath, String zipFilePath) throws IOException {
+	public static void compressDir(String dirPath, String zipFilePath) throws IOException {
 		if(ValidateHelper.isEmpty(dirPath)) {
 			throw new IllegalArgumentException("フォルダを指定してください。");
 		}
-
 		if(ValidateHelper.isEmpty(zipFilePath)) {
 			throw new IllegalArgumentException("zipファイルを指定してください。");
 		}
 		ZipUtil.pack(new File(dirPath), new File(zipFilePath));
 	}
+
+	/**
+	 * ファイルをzip圧縮する.
+	 * @param filePath 圧縮するファイルのパス
+	 * @param zipFilePath zipファイルの出力先
+	 */
+	public static void compressFile(String filePath, String zipFilePath) {
+		if(ValidateHelper.isEmpty(filePath)) {
+			throw new IllegalArgumentException("ファイルを指定してください。");
+		}
+		if(ValidateHelper.isEmpty(zipFilePath)) {
+			throw new IllegalArgumentException("zipファイルを指定してください。");
+		}
+		ZipUtil.packEntry(new File(filePath), new File(zipFilePath));
+	}
+
 }
