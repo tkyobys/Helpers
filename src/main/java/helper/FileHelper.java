@@ -69,6 +69,12 @@ public class FileHelper {
 		return file.exists();
 	}
 
+	/**
+	 * 引数で渡されたファイルパス文字列に相当するファイルを生成する.
+	 * @param filePath ファイルパス
+	 * @return true：ファイルの生成に成功 false：ファイルの生成に失敗
+	 * @throws IOException
+	 */
 	public static boolean create(String filePath) throws IOException {
 		if(ValidateHelper.isEmpty(filePath)) {
 			throw new IllegalArgumentException("ファイルパスを指定してください。");
