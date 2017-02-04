@@ -20,7 +20,7 @@ public class CaluculateHelper {
 	 * @return 四捨五入した値
 	 */
 	public static BigDecimal round(BigDecimal value, int digit) {
-		if(digit < 0) {
+		if(ValidateHelper.isLessThanZero(digit)) {
 			throw new IllegalArgumentException("digitは0以上の値を入力してください。");
 		}
 		return value.setScale(digit, BigDecimal.ROUND_HALF_UP);

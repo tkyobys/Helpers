@@ -83,4 +83,13 @@ public class ValidateHelper {
 	public static boolean isZeroOrOver(long value) {
 		return 0 <= value;
 	}
+
+	/**
+	 * ゼロ未満の数値か検査する.
+	 * @param value 数値
+	 * @return true:ゼロ未満 false:ゼロ以上
+	 */
+	public static boolean isLessThanZero(long value) {
+		return value < 0;
+	}
 }

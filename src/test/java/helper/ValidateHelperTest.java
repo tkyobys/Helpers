@@ -142,4 +142,20 @@ public class ValidateHelperTest {
 	public void isZeroOrOver_マイナス1() {
 		assertFalse(ValidateHelper.isZeroOrOver(-1));
 	}
+
+
+	@Test
+	public void isLessThan_1(){
+		assertFalse(ValidateHelper.isLessThanZero(1));
+	}
+
+	@Test
+	public void isLessThan_0(){
+		assertFalse(ValidateHelper.isLessThanZero(0));
+	}
+
+	@Test
+	public void isLessThan_マイナス1(){
+		assertTrue(ValidateHelper.isLessThanZero(-1));
+	}
 }
