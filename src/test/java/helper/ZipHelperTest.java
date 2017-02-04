@@ -2,8 +2,6 @@ package helper;
 
 import static org.junit.Assert.*;
 
-import java.io.IOException;
-
 import org.junit.Test;
 import org.zeroturnaround.zip.ZipException;
 
@@ -13,7 +11,7 @@ import org.zeroturnaround.zip.ZipException;
 public class ZipHelperTest {
 
 	@Test
-	public void compressDir_正常() throws IOException {
+	public void compressDir_正常() {
 		String dirPath = "src/test/resources/helper/ZipHelperTest";
 		String zipFilePath = "output-test/java/helper/ZipHelperTest/test.zip";
 		ZipHelper.compressDir(dirPath, zipFilePath);
@@ -22,45 +20,45 @@ public class ZipHelperTest {
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void compressDir_ファイルパスがnullである() throws IOException {
+	public void compressDir_ファイルパスがnullである() {
 		String zipFilePath = "output-test/java/helper/ZipHelperTest/test.zip";
 		ZipHelper.compressDir(null, zipFilePath);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void compressDir_ファイルパスが空白である() throws IOException {
+	public void compressDir_ファイルパスが空白である() {
 		String zipFilePath = "output-test/java/helper/ZipHelperTest/test.zip";
 		ZipHelper.compressDir(ConvertHelper.EMPTY, zipFilePath);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void compressDir_zipファイルパスがnullである() throws IOException {
+	public void compressDir_zipファイルパスがnullである() {
 		String dirPath = "src/test/resources/helper/ZipHelperTest";
 		ZipHelper.compressDir(dirPath, null);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void compressDir_zipファイルパスが空白である() throws IOException {
+	public void compressDir_zipファイルパスが空白である() {
 		String dirPath = "src/test/resources/helper/ZipHelperTest";
 		ZipHelper.compressDir(dirPath, ConvertHelper.EMPTY);
 	}
 
 	@Test(expected = ZipException.class)
-	public void compressDir_フォルダが存在しない() throws IOException {
+	public void compressDir_フォルダが存在しない() {
 		String dirPath = "src/test/resources/helper/not-found";
 		String zipFilePath = "output-test/java/helper/ZipHelperTest/test.zip";
 		ZipHelper.compressDir(dirPath, zipFilePath);
 	}
 
 	@Test(expected = ZipException.class)
-	public void compressDir_zipファイルの出力先が存在しない() throws IOException {
+	public void compressDir_zipファイルの出力先が存在しない() {
 		String dirPath = "src/test/resources/helper/ZipHelperTest";
 		String zipFilePath = "output-test/java/helper/not-found/test.zip";
 		ZipHelper.compressDir(dirPath, zipFilePath);
 	}
 
 	@Test(expected = ZipException.class)
-	public void compressDir_ファイルを指定() throws IOException {
+	public void compressDir_ファイルを指定() {
 		String dirPath = "src/test/resources/helper/ZipHelperTest/test.txt";
 		String zipFilePath = "output-test/java/helper/ZipHelperTest/test.zip";
 		ZipHelper.compressDir(dirPath, zipFilePath);

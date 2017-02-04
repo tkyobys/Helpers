@@ -1,7 +1,6 @@
 package helper;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.zeroturnaround.zip.ZipUtil;
 
@@ -22,9 +21,8 @@ public class ZipHelper {
 	 * フォルダをzip圧縮する.
 	 * @param dirPath 圧縮するフォルダのパス
 	 * @param zipFilePath zipファイルの出力先
-	 * @throws IOException
 	 */
-	public static void compressDir(String dirPath, String zipFilePath) throws IOException {
+	public static void compressDir(String dirPath, String zipFilePath) {
 		if(ValidateHelper.isEmpty(dirPath)) {
 			throw new IllegalArgumentException("フォルダを指定してください。");
 		}
