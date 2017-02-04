@@ -128,4 +128,18 @@ public class ValidateHelperTest {
 		ValidateHelper.isTelNo(ConvertHelper.EMPTY);
 	}
 
+	@Test
+	public void isZeroOrOver_1() {
+		assertTrue(ValidateHelper.isZeroOrOver(1));
+	}
+
+	@Test
+	public void isZeroOrOver_0() {
+		assertTrue(ValidateHelper.isZeroOrOver(0));
+	}
+
+	@Test
+	public void isZeroOrOver_マイナス1() {
+		assertFalse(ValidateHelper.isZeroOrOver(-1));
+	}
 }

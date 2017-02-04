@@ -22,7 +22,6 @@ public class ValidateHelper {
 
 	/**
 	 * 引数のオブジェクトがnullか検査する.
-	 *
 	 * @param obj オブジェクト
 	 * @return true:objがnull false:objがnullではない
 	 */
@@ -32,7 +31,6 @@ public class ValidateHelper {
 
 	/**
 	 * 引数のStringオブジェクトがnullもしくは空文字か検査する.
-	 *
 	 * @param s Stringオブジェクト
 	 * @return true:nullもしくは空文字 false:値がある
 	 */
@@ -42,7 +40,6 @@ public class ValidateHelper {
 
 	/**
 	 * 引数のコレクションがnullもしくは空か検査する.
-	 *
 	 * @param c コレクション
 	 * @return true:nullもしくは空 false:値がある
 	 */
@@ -52,18 +49,17 @@ public class ValidateHelper {
 
 	/**
 	 * 指定のパターンに一致する文字列かどうか検査する.
-	 *
 	 * @param value 検証対象の文字列
 	 * @param pattern 正規表現文字列
 	 * @return true:入力値がパターンと一致する false:入力値がパターンと一致しない
 	 */
 	public static boolean isMatch(String value, String pattern) {
 
-		if (isNull(pattern)) {
+		if(isNull(pattern)) {
 			throw new IllegalArgumentException("パターンを指定してください。");
 		}
 
-		if (isNull(value)) {
+		if(isNull(value)) {
 			return false;
 		}
 		return Pattern.compile(pattern).matcher(value).matches();
@@ -71,7 +67,6 @@ public class ValidateHelper {
 
 	/**
 	 * 電話番号のパターンに一致する文字列かどうか検査する.
-	 *
 	 * @param telNo 電話番号
 	 * @return true:電話番号のパターンと一致する false:電話番号ノパターンと一致しない
 	 */
@@ -80,4 +75,12 @@ public class ValidateHelper {
 
 	}
 
+	/**
+	 * ゼロ以上の数値か検査する.
+	 * @param value 数値
+	 * @return true:ゼロ以上 falseゼロ未満
+	 */
+	public static boolean isZeroOrOver(long value) {
+		return 0 <= value;
+	}
 }
