@@ -150,7 +150,10 @@
       <property name="tokens" value="VARIABLE_DEF"/>
       <property name="allowSamelineMultipleAnnotations" value="true"/>
     </module>
-    <module name="NonEmptyAtclauseDescription"/>
+    <module name="NonEmptyAtclauseDescription">
+      <property name="severity" value="ignore"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+    </module>
     <module name="JavadocTagContinuationIndentation"/>
     <module name="SummaryJavadoc">
       <property name="severity" value="ignore"/>
