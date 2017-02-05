@@ -1,6 +1,8 @@
 machine:
     timezone: Asia/Tokyo
+    java:
+        version: openjdk8
 
 dependencies:
-    pre:
-        - chmod -x ./gradlew
+  override:
+      - ./gradlew dependencies
