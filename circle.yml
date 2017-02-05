@@ -1,6 +1,6 @@
 machine:
-	timezone: Asia/Tokyo
+    timezone: Asia/Tokyo
 
 dependencies:
-	pre:
-	- chmod -x ./gradlew
+    pre:
+    - chmod -x ./gradlew
