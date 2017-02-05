@@ -32,8 +32,10 @@
     <module name="OneTopLevelClass"/>
     <module name="NoLineWrap"/>
     <module name="EmptyBlock">
+      <property name="severity" value="ignore"/>
       <property name="option" value="TEXT"/>
       <property name="tokens" value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
     <module name="NeedBraces"/>
     <module name="LeftCurly">
@@ -180,6 +182,15 @@
       <property name="exceptionVariableName" value="expected"/>
     </module>
     <module name="CommentsIndentation"/>
+    <module name="ConstantName"/>
+    <module name="EqualsAvoidNull"/>
+    <module name="IllegalThrows"/>
+    <module name="MagicNumber"/>
+    <module name="NestedIfDepth">
+      <property name="max" value="5"/>
+    </module>
+    <module name="TrailingComment"/>
+    <module name="RedundantModifier"/>
   </module>
   <module name="FileTabCharacter">
     <property name="severity" value="ignore"/>
