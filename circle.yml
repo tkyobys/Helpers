@@ -1,8 +1,8 @@
+checkout:
+    post:
+        - chmod +x ./gradlew
+
 machine:
     timezone: Asia/Tokyo
     java:
         version: openjdk8
-
-dependencies:
-  override:
-      - ./gradlew dependencies
