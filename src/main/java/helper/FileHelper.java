@@ -65,8 +65,7 @@ public class FileHelper {
 		if(ValidateHelper.isEmpty(filePath)) {
 			throw new IllegalArgumentException("ファイルパスを指定してください。");
 		}
-		File file = new File(filePath);
-		return file.exists();
+		return new File(filePath).exists();
 	}
 
 	/**
