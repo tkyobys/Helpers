@@ -43,15 +43,12 @@ public class FileHelper {
 	 * @return ファイル名と拡張子を結合した文字列
 	 */
 	public static String joinFileExtension(String fileName, FileExtension fileExtension) {
-
 		if(ValidateHelper.isEmpty(fileName)) {
 			throw new IllegalArgumentException("ファイル名を指定してください。");
 		}
-
 		if(ValidateHelper.isNull(fileExtension)) {
 			throw new IllegalArgumentException("ファイル拡張子を指定してください。");
 		}
-
 		return fileName + fileExtension.getValue();
 	}
 
@@ -96,5 +93,4 @@ public class FileHelper {
 		}
 		return new File(filePath).delete();
 	}
-
 }
