@@ -46,5 +46,4 @@ public class ZipHelper {
 		}
 		ZipUtil.packEntry(new File(filePath), new File(zipFilePath));
 	}
-
 }

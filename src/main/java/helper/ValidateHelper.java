@@ -54,11 +54,9 @@ public class ValidateHelper {
 	 * @return true:入力値がパターンと一致する false:入力値がパターンと一致しない
 	 */
 	public static boolean isMatch(String value, String pattern) {
-
 		if(isNull(pattern)) {
 			throw new IllegalArgumentException("パターンを指定してください。");
 		}
-
 		if(isNull(value)) {
 			return false;
 		}
@@ -72,7 +70,6 @@ public class ValidateHelper {
 	 */
 	public static boolean isTelNo(String telNo) {
 		return isMatch(telNo, PATTERN_TEL_NO);
-
 	}
 
 	/**
